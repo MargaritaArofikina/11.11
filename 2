@@ -1,0 +1,47 @@
+// Напишите программу, вычисляющую  произведение цифр целого числа, четность которых совпадает с четностью последней цифры.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int a, prod, b, i, c;
+	cin >> a;
+	prod = 1;
+	b = a;
+
+
+
+	if ((a % 2) == 0) {
+
+		for (i = 10; b >= 10; i *= 10) {
+			b = a / i;
+		}
+		if ((b % 2) == 0) prod *= b;
+
+		for (int j = 100; j <= i; j *= 10) {
+			c = (a / (i / j)) % (10);
+			if ((c % 2) == 0) prod *= c;
+		}
+
+	}
+
+	else {
+
+		for (i = 10; b >= 10; i *= 10) {
+			b = a / i;
+		}
+		if ((b % 2) != 0) prod *= b;
+
+		for (int j = 100; j <= i; j *= 10) {
+			c = (a / (i / j)) % (10);
+			if ((c % 2) != 0) prod *= c;
+		}
+
+
+	}
+
+
+	cout << prod;
+	return 0;
+}
