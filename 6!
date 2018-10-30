@@ -1,0 +1,23 @@
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+	int n,j;
+	j = 0;
+	cin >> n;
+	vector <int> a(n);
+	for (int i = 0; i <= n; i++) {
+		cin >> a[i];
+		for (int m = 1; m <= a[i]; m++){
+			if (a[i] % m == 0) j += 1;
+		}
+		if (j >= 5) cout << a[i];
+	}
+
+
+	return 0;
+}
