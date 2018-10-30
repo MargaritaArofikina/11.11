@@ -1,0 +1,32 @@
+// Напишите программу, вычисляющую биномиальный коэффициент из n по k.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int n, nf, k, kf, nkf, C;
+
+	cin >> n >> k;
+
+	nf = 1;
+	for (int i = 1; i <= n; i++) {
+		nf *= i;
+	}
+	kf  = 1;
+	for (int i = 1; i <= k; i++) {
+		kf *= i;
+	}
+	nkf = 1;
+	for (int i = 1; i <= (n-k); i++) {
+		nkf *= i;
+	}
+
+
+	C = nf / kf / nkf;
+
+		cout << C;
+
+
+	return 0;
+}
