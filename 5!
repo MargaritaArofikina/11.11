@@ -5,24 +5,37 @@ using namespace std;
 
 int main() {
 
-	int a;
-
+	int a,j;
 	cin >> a;
 
-	if (a == 1 || a == 2 || a == 3) {
+	if (a == 1) cout << "no prime dividers";
+
+	if ( a == 2 || a == 3) {
 		cout << a;
-	} else {
+	}
+	if (a == 4) {
+		cout << 2;
+	}
+    if (a != 1 && a != 2 && a != 3 && a != 4) {
 		for (int i = 2; i <= (a / 2); i++){
 			if (a%i == 0) {
-				if ((a/i))
+				if (a / i == 2 || a / i == 3) {
+					cout << a / i;
+				}
+				else {
+					for (j = 2; j <= (a / i / 2); j++){
+						if ((a / i) % j == 0) break;
+					}
+					if (j == (a / i / 2)) cout << (a / i);
+				}
+				
 			}
+			if (i == (a / 2)) cout << a;
 		}
-	
+	}
 
 
 
 
-
-
-	return 0;
-}
+		return 0;
+	}
