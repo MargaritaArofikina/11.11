@@ -1,0 +1,16 @@
+// Напишите программу, выписывающую все элементы последовательности, имеющие ровно 7 делителей.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int n, j;
+	j = 0;
+	cin >> n;
+	for (int m = 1; m <= n; m++){
+		if (n%m == 0) j += 1;
+	}
+	if (j == 7) cout << n;
+	return 0;
+}
