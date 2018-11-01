@@ -19,18 +19,25 @@ int main() {
     if (a != 1 && a != 2 && a != 3 && a != 4) {
 		for (int i = 2; i <= (a / 2); i++){
 			if (a%i == 0) {
-				if (a / i == 2 || a / i == 3) {
+				if (a / i == 2 || a/i ==3) {
 					cout << a / i;
+					break;
 				}
 				else {
 					for (j = 2; j <= (a / i / 2); j++){
 						if ((a / i) % j == 0) break;
 					}
-					if (j == (a / i / 2)) cout << (a / i);
+					if (j > (a / i / 2)) {
+						cout << (a / i);
+						break;
+					}
 				}
 				
 			}
-			if (i == (a / 2)) cout << a;
+			if (i == (a / 2)) {
+				cout << a;
+				break;
+			}
 		}
 	}
 
