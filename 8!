@@ -1,0 +1,23 @@
+Напишитте 2 функции, находящие приближенное значение квадратного и кубического корня. 
+
+#include <iostream>
+using namespace std;
+
+float root2 (float n, float i) {    //квадратный корень
+
+	for (i = 1.0; i <= n; i = i + 0.1){
+		if ((n - (i*i)) < 0.1 && (n - (i*i)) > -0.1) break;
+	}
+
+	return i;
+}
+
+
+float root3 (float m, float j) {    //кубический корень
+
+	for (j = 1.0; j <= m; j = j + 0.1){
+		if ((m - (j*j*j)) < 0.2 && (m - (j*j*j)) > -0.2) break;
+	}
+
+	return j;
+}
