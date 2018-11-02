@@ -1,9 +1,9 @@
-Напишитте 2 функции, находящие приближенное значение квадратного и кубического корня. 
+// Напишите 2 функции, находящие приближенное значение квадратного и кубического корня. 
 
 #include <iostream>
 using namespace std;
 
-float root2 (float n, float i) {    //квадратный корень
+float root2 (float n, float i) {    //квадратный корень                   // fatal error LNK1120: 1 unresolved externals
 
 	for (i = 1.0; i <= n; i = i + 0.1){
 		if ((n - (i*i)) < 0.1 && (n - (i*i)) > -0.1) break;
