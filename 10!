@@ -1,0 +1,12 @@
+//Напишите процедуру, удаляющую из динамически выделенного массива все четные значения.
+//По оконрчании работы процедуры количество выделенной памяти должно уменьшиться.
+
+
+using namespace std;
+
+void del ( int n,  unsigned long long * p_darr ) {      // fatal error LNK1120: 1 unresolved externals
+	for (int i = 0; i < n; i++){
+		if (p_darr[i] % 2 == 0)  delete (p_darr - i);
+	}
+	 delete[] p_darr;
+}
