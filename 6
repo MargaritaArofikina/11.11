@@ -1,0 +1,24 @@
+Напишите программу, выписывающую из последовательности, имеющие не менее 5 делителей.
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int n,a,j;
+	j = 0;
+	cin >> n;
+	for (int i = 1; i <= n; i++){
+		cin >> a;
+		for (int m = 1; m <= a; m++){
+			if (a%m == 0) j += 1;
+		}
+		if (j >= 5) cout << a;
+		j = 0;
+	}
+	
+
+
+	return 0;
+}
