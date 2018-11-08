@@ -2,11 +2,31 @@
 //По оконрчании работы процедуры количество выделенной памяти должно уменьшиться.
 
 
+#include <iostream>
 using namespace std;
 
-void del ( int n,  unsigned long long * p_darr ) {      // fatal error LNK1120: 1 unresolved externals
+void del(int n, unsigned long long * p_darr) {
+
 	for (int i = 0; i < n; i++){
-		if (p_darr[i] % 2 == 0)  delete (p_darr - i);
+		int j = 0;
+		if (p_darr[i] % 2 != 0) {
+			unsigned long long p_darr2[j] = p_darr[i];
+		}
+			j++;
+		}
 	}
-	 delete[] p_darr;
+}
+
+
+int main(){
+
+	int n;
+	unsigned long long p_darr;
+
+	del(n, p_darr)
+
+
+	delete[] p_darr;
+
+	return 0;
 }
