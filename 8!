@@ -3,42 +3,18 @@
 #include <iostream>
 using namespace std;
 
-float root2 (float n, float i) {    //квадратный корень                   // fatal error LNK1120: 1 unresolved externals
-
-	for (i = 1.0; i <= n; i = i + 0.1){
-		if ((n - (i*i)) < 0.1 && (n - (i*i)) > -0.1) break;
-	}
-
-	return i;
-}
-
-
-float root3 (float m, float j) {    //кубический корень
-
-	for (j = 1.0; j <= m; j = j + 0.1){
-		if ((m - (j*j*j)) < 0.2 && (m - (j*j*j)) > -0.2) break;
-	}
-
-	return j;
-}
-
-
-
-#include <iostream>
-using namespace std;
-
 double root2(double n) {    //квадратный корень  
 
-	double m;                         //(24): warning C4244: '=' : conversion from '__int64' to 'double', possible loss of data
+	double m;                         
 	double a = 0.00001;
-	for (double i = 0;; i += a){
+	for (double i = 0; ; i += a){
 		if (((i*i) <= n) && (((i + a)*(i + a)) >= n)) {
 			m = i;
 			break;
 		}
 	}
 	m *= (1 / a);
-	long long s = (long long) m + 1;
+	long long s = (long long)m;
 	int e = (s % 10);
 	if (e >= 5){
 		s -= e;
@@ -52,4 +28,44 @@ double root2(double n) {    //квадратный корень
 
 	return m;
 
+}
+
+
+
+double root3(double n) {    //кубический корень  
+
+	double m;
+	double a = 0.00001;
+	for (double i = 0; ; i += a){
+		if (((i*i*i) <= n) && (((i + a)*(i + a)*(i + a)) >= n)) {
+			m = i;
+			break;
+		}
+	}
+	m *= (1 / a);
+	long long s = (long long)m;
+	int e = (s % 10);
+	if (e >= 5){
+		s -= e;
+		s += 10;
+	}
+	else {
+		s -= e;
+	}
+	m = (s / 10);
+	m *= (a * 10);
+
+	return m;
+
+}
+
+
+
+
+int main(){
+	double n;
+	cin >> n;
+	cout << root2(n) << "  " << root3(n); 
+
+	return 0;
 }
