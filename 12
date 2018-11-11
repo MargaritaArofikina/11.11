@@ -1,0 +1,37 @@
+//Напишите процедуру, дописывающую к каждому элементу динамически выделенного массива справа его квадрат.
+
+#include <iostream>
+using namespace std;
+
+
+void massive(int* &a, int b){
+	int* newa = new int[b*2];
+	int m = 0;
+	for (int i = 0; i < b; i++){
+			*(newa + m) = *(a + i);
+			*(newa + m + 1) = (*(a + i)) *  (*(a + i));
+			m+=2;
+		}
+	a = newa;
+}
+
+
+int main(){
+
+	int n;
+	cin >> n;
+	int * arr = new int[n];
+	for (int i = 0; i < n; i++){
+		cin >> *(arr + i);
+	}
+
+	massive(arr, n);
+
+	for (int i = 0; i < (n*2); i++){
+		cout << *(arr + i) << " ";
+	}
+	delete[]arr;
+
+
+	return 0;
+}
