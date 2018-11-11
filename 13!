@@ -1,0 +1,62 @@
+Напишите процедуру, проводящую сжатие символьного динамически выделенного массива.
+
+#include <iostream>
+using namespace std;
+
+
+
+int amount(char* a, int b){
+	int p = 1;
+	for (int i = 0; i < b; i++){
+		if ((*(a + i)) != *(a+i + 1)) p++;
+	}
+	return p;
+}
+
+
+
+
+
+void massive(char* &a, int b){
+	int n = amount(a, b);
+	char* newa = new char[n * 2];
+
+	int m = 1;
+	int k = 0;
+
+	int i = 1;
+
+	for (int j = 1; j <= n; j++){
+		for (i; i < b; i++){
+			if (*(a + i) == *(a + i - 1)) m++;
+			else break;
+		}
+		*(newa + k) = m;
+		*(newa + k + 1) = *(a + i - 1);
+		k += 2;
+		i += m;
+	}
+	a = newa;
+}
+
+
+int main(){
+
+	int n;
+	cin >> n;
+	char * arr = new char[n];
+	for (int i = 0; i < n; i++){
+		cin >> *(arr + i);
+	}
+
+	int a = amount(arr, n);
+	massive(arr, n);
+
+	for (int i = 0; i < (n*2); i++){
+		cout << *(arr + i) << " ";
+	}
+	delete[]arr;
+
+
+	return 0;
+}
