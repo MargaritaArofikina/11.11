@@ -5,28 +5,57 @@
 #include <iostream>
 using namespace std;
 
-void del(int n, unsigned long long * p_darr) {
 
-	for (int i = 0; i < n; i++){
-		int j = 0;
-		if (p_darr[i] % 2 != 0) {
-			unsigned long long p_darr2[j] = p_darr[i];
-		}
-			j++;
+int even(int* a, int b){    //четные элементы
+	int s = 0;
+	for (int i = 0; i < b; i++){
+		if (((*(a + i)) % 2) == 0) s = *(a + i);
+	}
+	return s;
+}
+
+
+int amount(int* a, int b){     //количество четных элементов
+	int p = 0;
+	for (int i = 0; i < b; i++){
+		if ((*(a + i)) == even(a, b)) p++;
+	}
+	return p;
+}
+
+
+void massive(int* &a, int b){
+
+	int p = amount(a, b);
+	int* newa = new int[b - p];
+	int m = 0;
+	for (int i = 0; i < b; i++){
+		if ((*(a + i)) != even(a, b)) {
+			*(newa + m) = *(a + i);
+			m++;
 		}
 	}
+	a = newa;
 }
 
 
 int main(){
 
 	int n;
-	unsigned long long p_darr;
+	cin >> n;
+	int * arr = new int[n];
+	for (int i = 0; i < n; i++){
+		cin >> *(arr + i);
+	}
 
-	del(n, p_darr)
+	int a = amount(arr, n);
+	massive(arr, n);
 
+	for (int i = 0; i < (n - a); i++){
+		cout << *(arr + i) << " ";
+	}
+	delete[]arr;
 
-	delete[] p_darr;
 
 	return 0;
 }
