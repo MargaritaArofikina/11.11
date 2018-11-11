@@ -1,0 +1,44 @@
+// Напишите процедуру, удаляющую из динамически выделенного массива максимальный и минимальный элементы
+
+
+#include <iostream> 
+using namespace std;
+
+
+void(int n, unsigned long long * p_darr){
+
+	int max = 0;
+	for (int i = 0; i < n; i++){
+		if (p_darr[i] > max) max = p_darr[i];
+	}
+	int min = p_darr[0];
+	for (int i = 1; i < n; i++){
+		if (p_darr[i] < min) min = p_darr[i];
+	}
+
+	for (int i = 0; i < n; i++){
+		int m = 0;
+		if (p_darr[i] != max && p_darr[i] != min) {
+			unsigned long long p_darr2[m] = p_darr[i];
+		}
+		m++;
+	}
+
+}
+
+
+int main(){
+	int n;
+	unsigned long long p_darr;
+
+	cin » n;
+	for (i = 0; i < n; i++){
+		cin » p_darr[i];
+	}
+	void(n, p_darr){
+
+	}
+
+	delete[] p_darr;
+	return 0;
+}
