@@ -1,0 +1,36 @@
+//Напишите процедуру, дописывающую к каждому элементу динамически выделенного массива справа его квадрат.
+
+#include <iostream> 
+using namespace std;
+
+int sq(int n, unsigned long long * p_darr){
+	int m = 0;
+	unsigned long long * p_darr2;
+	for (int i = 0; i < n; i++){
+		p_darr2[m] = p_darr[i];
+		p_darr2[m + 1] = p_darr[i] * p_darr[i];
+		m += 2;
+	}
+	for (int i = 0; i < m; i++){
+		return p_darr[i];
+	}
+}
+
+
+int main(){
+
+	int n;
+	cin >> n;
+	unsigned long long * p_darr;
+	for (int i = 0; i < n; i++){
+		cin >> p_darr[i];
+	}
+
+	sq(n, p_darr);
+	cout << sq;
+
+
+
+
+	return 0;
+}
