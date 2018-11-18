@@ -1,0 +1,72 @@
+//Напишите логическую функцю, проверяющую, является ли строка анаграммой другой строки
+
+#include <iostream>
+using namespace std;
+
+
+bool anagram(char* &arr1, char* &arr2, int a, int b){
+
+	if (a != b) {
+		return 0;
+	}
+	else {
+		int i;
+		for (i = 0; i < a; i++){
+			
+			int r = 0;
+			int j;
+			for (j = 0; j < b; j++){
+				if (*(arr1 + i) == *(arr2 + j)){
+					int s = j;
+					int l;
+					char* massive = new char[b - 1];
+					for (l = 0; l < (b - 1); l++){
+						for (j = 0; j < b; j++){
+							if (j != s){
+								*(massive + l) = *(arr2 + j);
+								l++;
+							}
+						}
+					}
+					b--;
+					arr2 = massive;
+					r++;
+				}
+				
+			}
+			if (r == 0){
+				return 0;
+				break;
+			}
+
+		}
+		return 1;
+	}
+
+}
+
+
+int main(){
+
+	int a, b;
+	cin >> a;
+	char* arr1 = new char[a];
+	for (int i = 0; i < a; i++){
+		cin >> (arr1 + i);
+	}
+	cin >> b;
+	char* arr2 = new char[b];
+	for (int i = 0; i < b; i++){
+		cin >> (arr2 + i);
+	}
+
+	if (anagram(arr1, arr2, a, b) == 1){
+		cout << "Yes";
+	}
+	else {
+		cout << "No";
+	}
+
+
+	return 0;
+}
