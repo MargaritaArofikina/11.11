@@ -1,0 +1,25 @@
+//Для структуры Date напишите оператор, минус возвращающий количество дней, прошедших между датами.
+
+#include <iostream>
+using namespace std;
+
+
+struct Date {
+
+	int year;
+	int month;
+	int day;
+
+	Date(){
+		year = 0;
+		month = 0;
+		day = 0;
+	}
+	Date(int a,int b,int c){
+		year = a;
+		month = b;
+		day = c;
+	}
+
+
+};
