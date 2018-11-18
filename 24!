@@ -22,4 +22,38 @@ struct Date {
 	}
 
 
+        void cin(){
+		cin >> day >> month >> year;
+	}
+
+	void cout(){
+		if ((day / 10) == 0) cout << 0;
+		cout << day << ".";
+		if ((month / 10) == 0) cout << 0;
+		cout << month << '.' << year;
+	}
+
+	bool bissextile(){
+		if ((year % 400) == 0) {
+			return 1;
+		}
+		else {
+			if ((year % 100) == 0){
+				return 0;
+			}
+			else{
+				if ((year % 4) == 0){
+					return 1;
+				}
+				else{
+					return 0;
+				}
+			}
+		}
+	}
+
+
+	
+
+
 };
