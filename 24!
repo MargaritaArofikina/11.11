@@ -1,0 +1,25 @@
+//Для структуры Date напишите опертор плюс, принимающий целое число дней и возвращающий дату, отстоящую на это количество дней.
+
+#include <iostream>
+using namespace std;
+
+
+struct Date {
+
+	int year;
+	int month;
+	int day;
+
+	Date(){
+		year = 0;
+		month = 0;
+		day = 0;
+	}
+	Date(int a,int b,int c){
+		year = a;
+		month = b;
+		day = c;
+	}
+
+
+};
