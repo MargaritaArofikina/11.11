@@ -1,1 +1,18 @@
 Напишите программу, находящую корень функции f, если известно, что f - монотонна.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+	int n;
+	int*coef = new int[n];
+	cin >> n;
+	for (int i =0; i < n; i++){
+		cin >> *(coef + i);
+	}
+
+
+
+	return 0;
+}
